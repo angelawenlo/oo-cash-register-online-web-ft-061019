@@ -28,7 +28,9 @@ class CashRegister
 
   def void_last_transaction
     self.total = self.total - self.last_transaction[:price]
-    self.items = self.items.pop
+    self.last_transaction[:quantity].times do
+      self.items.pop
+    end
   end
 
 end
