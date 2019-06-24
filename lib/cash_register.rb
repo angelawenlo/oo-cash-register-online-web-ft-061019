@@ -6,13 +6,14 @@ class CashRegister
     self.total = 0
     self.discount = discount
     self.items = []
+    self.last_transaction = {}
   end
 
   def add_item(title, price, quantity = 1)
     quantity.times do
       self.items << title
     end
-    self.last_transaction
+    self.last_transaction = {price: price, quantity: quantity}
     self.total = self.total.to_f + price * quantity
 
   end
