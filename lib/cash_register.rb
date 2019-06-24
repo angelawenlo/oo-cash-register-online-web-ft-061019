@@ -29,7 +29,7 @@ class CashRegister
   def void_last_transaction
     self.total = self.total - self.last_transaction[:price]
     self.last_transaction[:quantity].times do
-      self.items.pop
+      self.items.pop 
     end
   end
 
